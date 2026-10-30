@@ -1,0 +1,6 @@
+.codex/
+node_modules/
+*.user
+*.suo
+*.tmp
+*.log

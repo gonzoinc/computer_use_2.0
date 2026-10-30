@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Computer-Use 2.0 Firefox acceptance fixture</title>
+<style>#status { color: rgb(0, 90, 170); padding: 8px; } label { display:block; margin: 8px; }</style></head>
+<body><h1>Firefox acceptance fixture</h1><p id="status">Ready</p>
+<label>Test input <input id="test-input" value="original"></label>
+<button id="dom-button">Update status</button><button id="log-button">Write console entry</button>
+<button id="error-button">Throw test error</button><button id="fetch-button">Request JSON and 404</button>
+<button id="debug-button">Run breakpoint target</button>
+<script>
+'use strict';
+document.querySelector('#dom-button').addEventListener('click', () => { document.querySelector('#status').textContent = 'DOM click worked'; });
+document.querySelector('#log-button').addEventListener('click', () => console.log('CU2 acceptance log', 42));
+document.querySelector('#error-button').addEventListener('click', () => { throw new Error('CU2 acceptance deliberate error'); });
+document.querySelector('#fetch-button').addEventListener('click', async () => { await fetch('fixture.json'); await fetch('missing-acceptance-file.json'); });
+function breakpointTarget(value) { const intermediate = value + 1; return intermediate * 2; }
+document.querySelector('#debug-button').addEventListener('click', () => { document.querySelector('#status').textContent = String(breakpointTarget(20)); });
+</script></body></html>

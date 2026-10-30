@@ -1,0 +1,26 @@
+{
+  "name": "computer-use-2",
+  "version": "0.1.0",
+  "description": "Independent Firefox debugging and Windows computer control.",
+  "license": "MIT",
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "requires_local_executor": true,
+  "interface": {
+    "displayName": "Computer-Use 2.0",
+    "logo": "./assets/icon.png",
+    "composerIcon": "./assets/icon.png",
+    "brandColor": "#087FF5",
+    "shortDescription": "Firefox debugging and Windows app control",
+    "longDescription": "Independent local Windows control with direct Firefox page, console, network and debugger access. Firefox connection and launch are explicit; no browser add-on is required.",
+    "category": "Productivity",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "Troubleshoot the page in my designated Firefox tab.",
+      "Inspect console errors and network requests in Firefox."
+    ]
+  }
+}
